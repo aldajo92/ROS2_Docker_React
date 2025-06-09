@@ -10,6 +10,10 @@ RUN apt update && apt install -y \
 RUN apt update && apt install -y \
     ros-${ROS_DISTRO}-cv-bridge
 
+# Install rosbridge for web communication
+RUN apt update && apt install -y \
+    ros-${ROS_DISTRO}-rosbridge-suite
+
 RUN mkdir -p /ros2_ws/src
 
 # Install React

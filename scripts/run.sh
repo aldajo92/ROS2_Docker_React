@@ -12,6 +12,7 @@ docker run -it \
   --volume ${PROJECT_ROOT}/ros2_ws:/ros2_ws \
   --volume ${PROJECT_ROOT}/react_app:/react_app \
   --publish 3000:3000 \
+  --publish 9090:9090 \
   --env HOST=0.0.0.0 \
   --env PORT=3000 \
   --rm \
