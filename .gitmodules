@@ -1,0 +1,3 @@
+[submodule "ros2_ws/src/waver_description"]
+	path = ros2_ws/src/waver_description
+	url = https://github.com/aldajo92/waver_description_ros2.git

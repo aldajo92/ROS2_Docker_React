@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ROSLIB from 'roslib';
 import useROS from '../hooks/useROS';
 import TopicSubscriber from './TopicSubscriber';
+import LiveRobotViewer from './LiveRobotViewer';
 
 const ROS2Dashboard = () => {
     const { ros, connected, error } = useROS('ws://localhost:9090');
@@ -10,6 +11,7 @@ const ROS2Dashboard = () => {
     const [availableTopics, setAvailableTopics] = useState([]);
     const [showTopics, setShowTopics] = useState(false);
     const [loadingTopics, setLoadingTopics] = useState(false);
+    const [showRobot, setShowRobot] = useState(true);
 
     // Common ROS2 topics for quick access
     const commonTopics = [
@@ -81,22 +83,48 @@ const ROS2Dashboard = () => {
     };
 
     return (
-        <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-            <h1>ROS2 Web Dashboard</h1>
+        <div className="dashboard">
+            <h1>🤖 ROS2 Web Dashboard</h1>
 
             {/* Connection Status */}
-            <div style={{
-                padding: '16px',
-                marginBottom: '20px',
-                borderRadius: '8px',
-                backgroundColor: connected ? '#d4edda' : '#f8d7da',
-                border: `1px solid ${connected ? '#c3e6cb' : '#f5c6cb'}`,
-                color: connected ? '#155724' : '#721c24'
-            }}>
-                <h3>Connection Status</h3>
-                <p>ROS Bridge: {connected ? '🟢 Connected' : '🔴 Disconnected'}</p>
-                <p>URL: ws://localhost:9090</p>
-                {error && <p>Error: {error}</p>}
+            <div className="status-section">
+                <h2>📡 Connection Status</h2>
+                <div className="status-row">
+                    <div className={`status-indicator ${connected ? 'connected' : 'disconnected'}`}>
+                        {connected ? '🟢 Connected' : '🔴 Disconnected'}
+                    </div>
+                    <div className="connection-info">
+                        <p>ROS Bridge: ws://localhost:9090</p>
+                        <p>Status: {connected ? 'Active' : 'Waiting for connection...'}</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Robot Visualization */}
+            <div className="robot-section">
+                <h2>🎯 Live Robot Visualization</h2>
+                <div className="robot-controls">
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked={showRobot}
+                            onChange={(e) => setShowRobot(e.target.checked)}
+                        />
+                        Show Robot Model
+                    </label>
+                </div>
+
+                {showRobot && (
+                    <div className="robot-viewer">
+                        <LiveRobotViewer
+                            ros={ros}
+                            connected={connected}
+                            height="500px"
+                            showGrid={true}
+                            showEnvironment={true}
+                        />
+                    </div>
+                )}
             </div>
 
             {/* Available Topics Section */}
@@ -279,6 +307,189 @@ const ROS2Dashboard = () => {
                     ))
                 )}
             </div>
+
+            {/* Inline CSS */}
+            <style jsx>{`
+                .dashboard {
+                    padding: 20px;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                    min-height: 100vh;
+                }
+
+                .dashboard h1 {
+                    text-align: center;
+                    color: #2c3e50;
+                    margin-bottom: 30px;
+                    font-size: 2.5em;
+                    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+                }
+
+                .status-section, .robot-section, .topics-section {
+                    background: white;
+                    border-radius: 12px;
+                    padding: 20px;
+                    margin-bottom: 25px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    border: 1px solid #e1e8ed;
+                }
+
+                .status-section h2, .robot-section h2, .topics-section h2 {
+                    color: #34495e;
+                    margin-bottom: 15px;
+                    font-size: 1.4em;
+                    border-bottom: 2px solid #3498db;
+                    padding-bottom: 8px;
+                }
+
+                .status-row {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                }
+
+                .status-indicator {
+                    padding: 12px 20px;
+                    border-radius: 25px;
+                    font-weight: bold;
+                    font-size: 1.1em;
+                    min-width: 150px;
+                    text-align: center;
+                }
+
+                .status-indicator.connected {
+                    background: linear-gradient(135deg, #2ecc71, #27ae60);
+                    color: white;
+                    box-shadow: 0 2px 4px rgba(46, 204, 113, 0.3);
+                }
+
+                .status-indicator.disconnected {
+                    background: linear-gradient(135deg, #e74c3c, #c0392b);
+                    color: white;
+                    box-shadow: 0 2px 4px rgba(231, 76, 60, 0.3);
+                }
+
+                .connection-info p {
+                    margin: 5px 0;
+                    color: #5a6c7d;
+                    font-size: 0.95em;
+                }
+
+                .robot-controls {
+                    margin-bottom: 15px;
+                }
+
+                .robot-controls label {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-size: 1.1em;
+                    color: #2c3e50;
+                    cursor: pointer;
+                }
+
+                .robot-controls input[type="checkbox"] {
+                    width: 18px;
+                    height: 18px;
+                    accent-color: #3498db;
+                }
+
+                .robot-viewer {
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                }
+
+                .topics-controls {
+                    display: flex;
+                    gap: 10px;
+                    margin-bottom: 15px;
+                    flex-wrap: wrap;
+                }
+
+                .topics-controls button {
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 6px;
+                    background: linear-gradient(135deg, #3498db, #2980b9);
+                    color: white;
+                    cursor: pointer;
+                    font-weight: 500;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+                }
+
+                .topics-controls button:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4);
+                }
+
+                .topics-controls button:disabled {
+                    background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+                    cursor: not-allowed;
+                    transform: none;
+                }
+
+                .loading-spinner {
+                    text-align: center;
+                    color: #7f8c8d;
+                    font-style: italic;
+                }
+
+                .topic-list {
+                    background: #f8f9fa;
+                    border-radius: 8px;
+                    padding: 15px;
+                    max-height: 300px;
+                    overflow-y: auto;
+                }
+
+                .topic-item {
+                    background: white;
+                    border: 1px solid #dee2e6;
+                    border-radius: 6px;
+                    padding: 12px;
+                    margin-bottom: 8px;
+                    transition: all 0.2s ease;
+                }
+
+                .topic-item:hover {
+                    border-color: #3498db;
+                    box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+                }
+
+                .topic-name {
+                    font-weight: 600;
+                    color: #2c3e50;
+                    margin-bottom: 4px;
+                }
+
+                .topic-type {
+                    font-size: 0.9em;
+                    color: #7f8c8d;
+                    font-family: monospace;
+                }
+
+                @media (max-width: 768px) {
+                    .dashboard {
+                        padding: 15px;
+                    }
+                    
+                    .dashboard h1 {
+                        font-size: 2em;
+                    }
+                    
+                    .status-row {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 10px;
+                    }
+                    
+                    .topics-controls {
+                        flex-direction: column;
+                    }
+                }
+            `}</style>
         </div>
     );
 };

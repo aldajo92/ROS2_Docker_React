@@ -1,0 +1,270 @@
+🚀 Starting ROS2 React Integration...
+📡 Starting rosbridge server in background...
+⏳ Waiting for rosbridge to initialize...
+🌉 Starting ROS Bridge Server...
+📡 Launching rosbridge_websocket on port 9090...
+📋 ROS Bridge PID: 483
+[INFO] [launch]: All log files can be found below /root/.ros/log/2025-06-09-23-17-36-219930-c6d7eeba388b-483
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [rosbridge_websocket-1]: process started with pid [485]
+[INFO] [rosapi_node-2]: process started with pid [487]
+[rosbridge_websocket-1] [INFO] [1749511057.068010127] [rosbridge_websocket]: Rosbridge WebSocket server started on port 9090
+✅ ROS Bridge Server started successfully
+🌐 WebSocket available at ws://localhost:9090
+⚛️  Starting React application...
+⚛️  Starting React Development Server...
+🚀 Starting React app in development mode...
+🌐 App will be available at http://localhost:3000
+🛑 Press Ctrl+C to stop the server
+
+
+> my-react-app@0.1.0 start
+> HOST=0.0.0.0 PORT=3000 react-scripts start
+
+[1G[0K[36mAttempting to bind to HOST environment variable: [33m[1m0.0.0.0[22m[39m[36m[39m
+If this was unintentional, check that you haven't mistakenly set it in your shell.
+Learn more here: [33mhttps://cra.link/advanced-config[39m
+
+(node:528) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:528) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+Failed to parse source map from '/react_app/node_modules/@mediapipe/tasks-vision/vision_bundle_mjs.js.map' file: Error: ENOENT: no such file or directory, open '/react_app/node_modules/@mediapipe/tasks-vision/vision_bundle_mjs.js.map'
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[1m[33mWARNING[39m[22m in [1m./node_modules/@mediapipe/tasks-vision/vision_bundle.mjs[39m[22m
+[1mModule Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/react_app/node_modules/@mediapipe/tasks-vision/vision_bundle_mjs.js.map' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/react_app/node_modules/@mediapipe/tasks-vision/vision_bundle_mjs.js.map'[39m[22m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+^C[rosapi_node-2] Traceback (most recent call last):
+[rosapi_node-2]   File "/opt/ros/humble/lib/rosapi/rosapi_node", line 329, in <module>
+[rosapi_node-2]     main()
+[rosapi_node-2]   File "/opt/ros/humble/lib/rosapi/rosapi_node", line 321, in main
+[rosapi_node-2]     rclpy.spin(node)
+[rosapi_node-2]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 226, in spin
+[rosapi_node-2]     executor.spin_once()
+[rosapi_node-2]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[rosapi_node-2]     self._spin_once_impl(timeout_sec)
+[rosapi_node-2]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[rosapi_node-2]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[rosapi_node-2]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[rosapi_node-2]     return next(self._cb_iter)
+[rosapi_node-2]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 624, in _wait_for_ready_callbacks
+[rosapi_node-2]     raise ExternalShutdownException()
+[rosapi_node-2] rclpy.executors.ExternalShutdownException
+[rosbridge_websocket-1] ERROR:tornado.application:Exception in callback <function main.<locals>.spin_ros at 0x7ffff6615900>
+[rosbridge_websocket-1] Traceback (most recent call last):
+[rosbridge_websocket-1]   File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 905, in _run
+[rosbridge_websocket-1]     return self.callback()
+[rosbridge_websocket-1]   File "/opt/ros/humble/lib/rosbridge_server/rosbridge_websocket", line 342, in spin_ros
+[rosbridge_websocket-1]     executor.spin_once(timeout_sec=0.01)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[rosbridge_websocket-1]     self._spin_once_impl(timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[rosbridge_websocket-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[rosbridge_websocket-1]     return next(self._cb_iter)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 491, in _wait_for_ready_callbacks
+[rosbridge_websocket-1]     timeout_timer = Timer(None, None, timeout_nsec, self._clock, context=self._context)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/timer.py", line 28, in __init__
+[rosbridge_websocket-1]     self.__timer = _rclpy.Timer(
+[rosbridge_websocket-1] rclpy._rclpy_pybind11.RCLError: failed to create timer: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/guard_condition.c:67
+[rosbridge_websocket-1] ERROR:tornado.application:Exception in callback <function main.<locals>.spin_ros at 0x7ffff6615900>
+[rosbridge_websocket-1] Traceback (most recent call last):
+[rosbridge_websocket-1]   File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 905, in _run
+[rosbridge_websocket-1]     return self.callback()
+[rosbridge_websocket-1]   File "/opt/ros/humble/lib/rosbridge_server/rosbridge_websocket", line 342, in spin_ros
+[rosbridge_websocket-1]     executor.spin_once(timeout_sec=0.01)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[rosbridge_websocket-1]     self._spin_once_impl(timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[rosbridge_websocket-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[rosbridge_websocket-1]     return next(self._cb_iter)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 491, in _wait_for_ready_callbacks
+[rosbridge_websocket-1]     timeout_timer = Timer(None, None, timeout_nsec, self._clock, context=self._context)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/timer.py", line 28, in __init__
+[rosbridge_websocket-1]     self.__timer = _rclpy.Timer(
+[rosbridge_websocket-1] rclpy._rclpy_pybind11.RCLError: failed to create timer: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/guard_condition.c:67
+[rosbridge_websocket-1] ERROR:tornado.application:Exception in callback <function main.<locals>.spin_ros at 0x7ffff6615900>
+[rosbridge_websocket-1] Traceback (most recent call last):
+[rosbridge_websocket-1]   File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 905, in _run
+[rosbridge_websocket-1]     return self.callback()
+[rosbridge_websocket-1]   File "/opt/ros/humble/lib/rosbridge_server/rosbridge_websocket", line 342, in spin_ros
+[rosbridge_websocket-1]     executor.spin_once(timeout_sec=0.01)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[rosbridge_websocket-1]     self._spin_once_impl(timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[rosbridge_websocket-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[rosbridge_websocket-1]     return next(self._cb_iter)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 491, in _wait_for_ready_callbacks
+[rosbridge_websocket-1]     timeout_timer = Timer(None, None, timeout_nsec, self._clock, context=self._context)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/timer.py", line 28, in __init__
+[rosbridge_websocket-1]     self.__timer = _rclpy.Timer(
+[rosbridge_websocket-1] rclpy._rclpy_pybind11.RCLError: failed to create timer: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/guard_condition.c:67
+[rosbridge_websocket-1] ERROR:tornado.application:Exception in callback <function main.<locals>.spin_ros at 0x7ffff6615900>
+[rosbridge_websocket-1] Traceback (most recent call last):
+[rosbridge_websocket-1]   File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 905, in _run
+[rosbridge_websocket-1]     return self.callback()
+[rosbridge_websocket-1]   File "/opt/ros/humble/lib/rosbridge_server/rosbridge_websocket", line 342, in spin_ros
+[rosbridge_websocket-1]     executor.spin_once(timeout_sec=0.01)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[rosbridge_websocket-1]     self._spin_once_impl(timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[rosbridge_websocket-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[rosbridge_websocket-1]     return next(self._cb_iter)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 491, in _wait_for_ready_callbacks
+[rosbridge_websocket-1]     timeout_timer = Timer(None, None, timeout_nsec, self._clock, context=self._context)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/timer.py", line 28, in __init__
+[rosbridge_websocket-1]     self.__timer = _rclpy.Timer(
+[rosbridge_websocket-1] rclpy._rclpy_pybind11.RCLError: failed to create timer: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/guard_condition.c:67
+[rosbridge_websocket-1] ERROR:tornado.application:Exception in callback <function main.<locals>.spin_ros at 0x7ffff6615900>
+[rosbridge_websocket-1] Traceback (most recent call last):
+[rosbridge_websocket-1]   File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 905, in _run
+[rosbridge_websocket-1]     return self.callback()
+[rosbridge_websocket-1]   File "/opt/ros/humble/lib/rosbridge_server/rosbridge_websocket", line 342, in spin_ros
+[rosbridge_websocket-1]     executor.spin_once(timeout_sec=0.01)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[rosbridge_websocket-1]     self._spin_once_impl(timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[rosbridge_websocket-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[rosbridge_websocket-1]     return next(self._cb_iter)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 491, in _wait_for_ready_callbacks
+[rosbridge_websocket-1]     timeout_timer = Timer(None, None, timeout_nsec, self._clock, context=self._context)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/timer.py", line 28, in __init__
+[rosbridge_websocket-1]     self.__timer = _rclpy.Timer(
+[rosbridge_websocket-1] rclpy._rclpy_pybind11.RCLError: failed to create timer: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/guard_condition.c:67
+[rosbridge_websocket-1] ERROR:tornado.application:Exception in callback <function main.<locals>.spin_ros at 0x7ffff6615900>
+[rosbridge_websocket-1] Traceback (most recent call last):
+[rosbridge_websocket-1]   File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 905, in _run
+[rosbridge_websocket-1]     return self.callback()
+[rosbridge_websocket-1]   File "/opt/ros/humble/lib/rosbridge_server/rosbridge_websocket", line 342, in spin_ros
+[rosbridge_websocket-1]     executor.spin_once(timeout_sec=0.01)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[rosbridge_websocket-1]     self._spin_once_impl(timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[rosbridge_websocket-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[rosbridge_websocket-1]     return next(self._cb_iter)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 491, in _wait_for_ready_callbacks
+[rosbridge_websocket-1]     timeout_timer = Timer(None, None, timeout_nsec, self._clock, context=self._context)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/timer.py", line 28, in __init__
+[rosbridge_websocket-1]     self.__timer = _rclpy.Timer(
+[rosbridge_websocket-1] rclpy._rclpy_pybind11.RCLError: failed to create timer: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/guard_condition.c:67
+[rosbridge_websocket-1] ERROR:tornado.application:Exception in callback <function main.<locals>.spin_ros at 0x7ffff6615900>
+[rosbridge_websocket-1] Traceback (most recent call last):
+[rosbridge_websocket-1]   File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 905, in _run
+[rosbridge_websocket-1]     return self.callback()
+[rosbridge_websocket-1]   File "/opt/ros/humble/lib/rosbridge_server/rosbridge_websocket", line 342, in spin_ros
+[rosbridge_websocket-1]     executor.spin_once(timeout_sec=0.01)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[rosbridge_websocket-1]     self._spin_once_impl(timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[rosbridge_websocket-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[rosbridge_websocket-1]     return next(self._cb_iter)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 491, in _wait_for_ready_callbacks
+[rosbridge_websocket-1]     timeout_timer = Timer(None, None, timeout_nsec, self._clock, context=self._context)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/timer.py", line 28, in __init__
+[rosbridge_websocket-1]     self.__timer = _rclpy.Timer(
+[rosbridge_websocket-1] rclpy._rclpy_pybind11.RCLError: failed to create timer: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/guard_condition.c:67
+[rosbridge_websocket-1] ERROR:tornado.application:Exception in callback <function main.<locals>.spin_ros at 0x7ffff6615900>
+[rosbridge_websocket-1] Traceback (most recent call last):
+[rosbridge_websocket-1]   File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 905, in _run
+[rosbridge_websocket-1]     return self.callback()
+[rosbridge_websocket-1]   File "/opt/ros/humble/lib/rosbridge_server/rosbridge_websocket", line 342, in spin_ros
+[rosbridge_websocket-1]     executor.spin_once(timeout_sec=0.01)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[rosbridge_websocket-1]     self._spin_once_impl(timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[rosbridge_websocket-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[rosbridge_websocket-1]     return next(self._cb_iter)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 491, in _wait_for_ready_callbacks
+[rosbridge_websocket-1]     timeout_timer = Timer(None, None, timeout_nsec, self._clock, context=self._context)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/timer.py", line 28, in __init__
+[rosbridge_websocket-1]     self.__timer = _rclpy.Timer(
+[rosbridge_websocket-1] rclpy._rclpy_pybind11.RCLError: failed to create timer: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/guard_condition.c:67
+[rosbridge_websocket-1] ERROR:tornado.application:Exception in callback <function main.<locals>.spin_ros at 0x7ffff6615900>
+[rosbridge_websocket-1] Traceback (most recent call last):
+[rosbridge_websocket-1]   File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 905, in _run
+[rosbridge_websocket-1]     return self.callback()
+[rosbridge_websocket-1]   File "/opt/ros/humble/lib/rosbridge_server/rosbridge_websocket", line 342, in spin_ros
+[rosbridge_websocket-1]     executor.spin_once(timeout_sec=0.01)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[rosbridge_websocket-1]     self._spin_once_impl(timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[rosbridge_websocket-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[rosbridge_websocket-1]     return next(self._cb_iter)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 491, in _wait_for_ready_callbacks
+[rosbridge_websocket-1]     timeout_timer = Timer(None, None, timeout_nsec, self._clock, context=self._context)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/timer.py", line 28, in __init__
+[rosbridge_websocket-1]     self.__timer = _rclpy.Timer(
+[rosbridge_websocket-1] rclpy._rclpy_pybind11.RCLError: failed to create timer: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/guard_condition.c:67
+[rosbridge_websocket-1] ERROR:tornado.application:Exception in callback <function main.<locals>.spin_ros at 0x7ffff6615900>
+[rosbridge_websocket-1] Traceback (most recent call last):
+[rosbridge_websocket-1]   File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 905, in _run
+[rosbridge_websocket-1]     return self.callback()
+[rosbridge_websocket-1]   File "/opt/ros/humble/lib/rosbridge_server/rosbridge_websocket", line 342, in spin_ros
+[rosbridge_websocket-1]     executor.spin_once(timeout_sec=0.01)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[rosbridge_websocket-1]     self._spin_once_impl(timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[rosbridge_websocket-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[rosbridge_websocket-1]     return next(self._cb_iter)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 491, in _wait_for_ready_callbacks
+[rosbridge_websocket-1]     timeout_timer = Timer(None, None, timeout_nsec, self._clock, context=self._context)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/timer.py", line 28, in __init__
+[rosbridge_websocket-1]     self.__timer = _rclpy.Timer(
+[rosbridge_websocket-1] rclpy._rclpy_pybind11.RCLError: failed to create timer: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/guard_condition.c:67
+[rosbridge_websocket-1] ERROR:tornado.application:Exception in callback <function main.<locals>.spin_ros at 0x7ffff6615900>
+[rosbridge_websocket-1] Traceback (most recent call last):
+[rosbridge_websocket-1]   File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 905, in _run
+[rosbridge_websocket-1]     return self.callback()
+[rosbridge_websocket-1]   File "/opt/ros/humble/lib/rosbridge_server/rosbridge_websocket", line 342, in spin_ros
+[rosbridge_websocket-1]     executor.spin_once(timeout_sec=0.01)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[rosbridge_websocket-1]     self._spin_once_impl(timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[rosbridge_websocket-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[rosbridge_websocket-1]     return next(self._cb_iter)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 491, in _wait_for_ready_callbacks
+[rosbridge_websocket-1]     timeout_timer = Timer(None, None, timeout_nsec, self._clock, context=self._context)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/timer.py", line 28, in __init__
+[rosbridge_websocket-1]     self.__timer = _rclpy.Timer(
+[rosbridge_websocket-1] rclpy._rclpy_pybind11.RCLError: failed to create timer: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/guard_condition.c:67
+[rosbridge_websocket-1] ERROR:tornado.application:Exception in callback <function main.<locals>.spin_ros at 0x7ffff6615900>
+[rosbridge_websocket-1] Traceback (most recent call last):
+[rosbridge_websocket-1]   File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 905, in _run
+[rosbridge_websocket-1]     return self.callback()
+[rosbridge_websocket-1]   File "/opt/ros/humble/lib/rosbridge_server/rosbridge_websocket", line 342, in spin_ros
+[rosbridge_websocket-1]     executor.spin_once(timeout_sec=0.01)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+[rosbridge_websocket-1]     self._spin_once_impl(timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+[rosbridge_websocket-1]     handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+[rosbridge_websocket-1]     return next(self._cb_iter)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 491, in _wait_for_ready_callbacks
+[rosbridge_websocket-1]     timeout_timer = Timer(None, None, timeout_nsec, self._clock, context=self._context)
+[rosbridge_websocket-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/timer.py", line 28, in __init__
+[rosbridge_websocket-1]     self.__timer = _rclpy.Timer(
+[rosbridge_websocket-1] rclpy._rclpy_pybind11.RCLError: failed to create timer: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/guard_condition.c:67
+[rosbridge_websocket-1] ERROR:tornado.application:Exception in callback <function main.<locals>.spin_ros at 0x7ffff6615900>
+[rosbridge_websocket-1] Traceback (most recent call last):
+[rosbridge_websocket-1]   File "/usr/lib/python3/dist-packages/tornado/ioloop.py", line 905, in _run
+[rosbridge_websocket-1]     return self.callback()
+[rosbridge_websocket-1]   File "/opt/ros/humble/lib/rosbridge_server/rosbridge_websocket", line 342, in spin_ros
+[rosbridge_websocket-1]     executor.spin_once(timeout_sec=0.01)
