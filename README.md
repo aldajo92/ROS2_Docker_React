@@ -124,6 +124,12 @@ The project includes a comprehensive test suite with 39 tests:
 
 # Run test suite
 ./ros2_scripts/run_test.sh
+
+# Build and serve for production (port 5050)
+./ros2_scripts/build_production.sh
+
+# Serve existing production build (port 5050)
+./ros2_scripts/serve_production.sh
 ```
 
 ## Technology Stack
