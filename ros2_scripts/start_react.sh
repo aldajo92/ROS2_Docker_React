@@ -20,6 +20,10 @@ docker exec -it ${DOCKER_CONTAINER_NAME} /bin/bash -c "
     
     echo '⏳ Waiting for rosbridge to initialize...'
     sleep 5
+
+    echo '🤖 Starting random data publisher...'
+    source /ros2_ws/install/setup.bash && ros2 run random_data_publisher random_data_node.py &
+    PUBLISHER_PID=\$!
     
     echo '⚛️  Starting React application...'
     cd /react_app && npm start
@@ -28,4 +32,3 @@ docker exec -it ${DOCKER_CONTAINER_NAME} /bin/bash -c "
     echo '🛑 Shutting down rosbridge...'
     kill \$ROSBRIDGE_PID 2>/dev/null || true
 "
- 
