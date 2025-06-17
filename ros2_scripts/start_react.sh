@@ -15,14 +15,14 @@ check_rosbridge() {
 docker exec -it ${DOCKER_CONTAINER_NAME} /bin/bash -c "
     echo '📡 Starting rosbridge server in background...'
     cd /react_app
-    ./start-rosbridge.sh &
+    source /opt/ros/${ROS_DISTRO}/setup.bash && ros2 launch rosbridge_server rosbridge_websocket_launch.xml &
     ROSBRIDGE_PID=\$!
     
     echo '⏳ Waiting for rosbridge to initialize...'
     sleep 5
     
     echo '⚛️  Starting React application...'
-    ./start-docker.sh
+    cd /react_app && npm start
     
     # If React app exits, kill rosbridge
     echo '🛑 Shutting down rosbridge...'

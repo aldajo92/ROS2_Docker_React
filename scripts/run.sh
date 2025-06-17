@@ -8,7 +8,7 @@ source ${PROJECT_ROOT}/config_local.sh
 
 docker run -it \
   --name=${DOCKER_CONTAINER_NAME} \
-  --network ${ROS_NETWORK} \
+  --network ${DOCKER_NETWORK} \
   --volume ${PROJECT_ROOT}/ros2_ws:/ros2_ws \
   --volume ${PROJECT_ROOT}/react_app:/react_app \
   --publish 3000:3000 \

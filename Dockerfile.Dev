@@ -29,4 +29,4 @@ RUN echo "alias bros2='cd /ros2_ws && source /opt/ros/${ROS_DISTRO}/setup.bash &
 RUN echo "alias sros2='source /opt/ros/${ROS_DISTRO}/setup.bash && source /ros2_ws/install/setup.bash'" >> ~/.bashrc
 
 WORKDIR /ros2_ws
-X
+
