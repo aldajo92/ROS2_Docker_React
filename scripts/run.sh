@@ -4,7 +4,6 @@ set -e
 
 PROJECT_ROOT="$(cd "$(dirname "$0")"; cd ..; pwd)"
 source ${PROJECT_ROOT}/config_docker.sh
-source ${PROJECT_ROOT}/config_local.sh
 
 docker run -it \
   --name=${DOCKER_CONTAINER_NAME} \
@@ -15,5 +14,6 @@ docker run -it \
   --publish 9090:9090 \
   --env HOST=0.0.0.0 \
   --env PORT=3000 \
+  --env ROS_DOMAIN_ID=0 \
   --rm \
   ${DOCKER_IMAGE_NAME} /bin/bash

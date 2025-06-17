@@ -27,6 +27,7 @@
 }
 
 .right-panel {
-    flex: 1;
+    min-width: 400px;
+    max-width: 500px;
     display: flex;
 }

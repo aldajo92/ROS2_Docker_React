@@ -4,6 +4,7 @@ import useROS from '../hooks/useROS';
 import ConnectionStatus from './ConnectionStatus';
 import AvailableTopics from './AvailableTopics';
 import EmptyCard from './EmptyCard';
+import TimePlotGraph from './TimePlotGraph';
 import './ROS2Dashboard.css';
 
 const ROS2Dashboard = () => {
@@ -42,9 +43,16 @@ const ROS2Dashboard = () => {
                     />
                 </div>
 
+                {/* Center Panel */}
+                <EmptyCard />
+
                 {/* Right Panel */}
                 <div className="right-panel">
-                    <EmptyCard />
+                    <TimePlotGraph
+                        title="ROS Data Plot"
+                        ros={ros}
+                        connected={connected}
+                    />
                 </div>
             </div>
         </div>

@@ -25,7 +25,6 @@ const AvailableTopics = ({ ros, connected }) => {
         getTopicsClient.callService(request, (result) => {
             console.log('Available topics:', result.topics);
             setAvailableTopics(result.topics || []);
-            setShowTopics(true);
             setLoadingTopics(false);
         }, (error) => {
             console.error('Failed to get topics:', error);
@@ -34,7 +33,6 @@ const AvailableTopics = ({ ros, connected }) => {
                 ros.getTopics((topics) => {
                     console.log('Available topics (fallback):', topics);
                     setAvailableTopics(topics || []);
-                    setShowTopics(true);
                     setLoadingTopics(false);
                 }, (error) => {
                     console.error('Failed to get topics with fallback:', error);
@@ -44,6 +42,17 @@ const AvailableTopics = ({ ros, connected }) => {
                 setLoadingTopics(false);
             }
         });
+    };
+
+    const toggleTopics = () => {
+        if (showTopics) {
+            setShowTopics(false);
+        } else {
+            if (availableTopics.length === 0) {
+                fetchAvailableTopics();
+            }
+            setShowTopics(true);
+        }
     };
 
     return (
@@ -57,35 +66,19 @@ const AvailableTopics = ({ ros, connected }) => {
             <h3>Available Topics</h3>
             <div style={{ marginBottom: '16px' }}>
                 <button
-                    onClick={fetchAvailableTopics}
+                    onClick={toggleTopics}
                     disabled={!connected || loadingTopics}
                     style={{
                         padding: '10px 20px',
                         borderRadius: '4px',
-                        border: '1px solid #17a2b8',
-                        backgroundColor: '#17a2b8',
+                        border: `1px solid ${showTopics ? '#6c757d' : '#17a2b8'}`,
+                        backgroundColor: showTopics ? '#6c757d' : '#17a2b8',
                         color: 'white',
-                        cursor: !connected || loadingTopics ? 'not-allowed' : 'pointer',
-                        marginRight: '10px'
+                        cursor: !connected || loadingTopics ? 'not-allowed' : 'pointer'
                     }}
                 >
-                    {loadingTopics ? 'Loading...' : 'List All Topics'}
+                    {loadingTopics ? 'Loading...' : showTopics ? 'Hide Topics' : 'Show Topics'}
                 </button>
-                {showTopics && (
-                    <button
-                        onClick={() => setShowTopics(false)}
-                        style={{
-                            padding: '10px 20px',
-                            borderRadius: '4px',
-                            border: '1px solid #6c757d',
-                            backgroundColor: '#6c757d',
-                            color: 'white',
-                            cursor: 'pointer'
-                        }}
-                    >
-                        Hide Topics
-                    </button>
-                )}
             </div>
 
             {showTopics && (
@@ -103,17 +96,19 @@ const AvailableTopics = ({ ros, connected }) => {
                             No topics found. Make sure ROS2 nodes are running.
                         </p>
                     ) : (
-                        <ul style={{ margin: 0, paddingLeft: '20px' }}>
+                        <div style={{ margin: 0, padding: 0 }}>
                             {availableTopics.map((topic, index) => (
-                                <li key={index} style={{
+                                <div key={index} style={{
                                     marginBottom: '4px',
-                                    fontFamily: 'monospace',
-                                    fontSize: '14px'
+                                    fontFamily: 'Consolas, "Courier New", monospace',
+                                    fontSize: '14px',
+                                    textAlign: 'left',
+                                    padding: '2px 0'
                                 }}>
                                     {topic}
-                                </li>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     )}
                 </div>
             )}

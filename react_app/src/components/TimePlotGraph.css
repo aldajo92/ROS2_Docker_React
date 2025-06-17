@@ -1,0 +1,185 @@
+.time-plot-container {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: fit-content;
+}
+
+.time-plot-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.time-plot-header h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+.time-plot-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.topic-select {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 200px;
+}
+
+.topic-select:disabled {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+.record-button {
+    padding: 6px 12px;
+    border: 1px solid #28a745;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.record-button:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+.record-button.recording {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.record-button.recording:hover {
+    background-color: #c82333;
+}
+
+.record-button:disabled {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.clear-button {
+    padding: 6px 12px;
+    border: 1px solid #ffc107;
+    background-color: #ffc107;
+    color: #212529;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.clear-button:hover {
+    background-color: #e0a800;
+}
+
+.time-plot-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.no-data-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #6c757d;
+    text-align: center;
+    height: 300px;
+}
+
+.no-data-message p {
+    margin: 5px 0;
+}
+
+.sub-message {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.plot-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #6c757d;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.plot-info span {
+    font-weight: 500;
+}
+
+.chart-wrapper {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: white;
+    height: 300px;
+}
+
+/* Recharts styling overrides */
+.recharts-wrapper {
+    background-color: white;
+}
+
+.recharts-cartesian-axis-tick-value {
+    font-size: 12px;
+    fill: #666;
+}
+
+.recharts-legend-wrapper {
+    padding-top: 10px;
+}
+
+.recharts-tooltip-wrapper {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.plot-note {
+    margin-top: 10px;
+    text-align: center;
+    color: #6c757d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .time-plot-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .topic-select {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .plot-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
