@@ -4,13 +4,13 @@ A modern web dashboard for ROS2 built with React and Docker. This project provid
 
 ## Features
 
-- 🌐 **Web-based ROS2 Dashboard**: Modern React interface for ROS2 interaction
-- 📡 **Real-time Topic Monitoring**: Subscribe to and visualize ROS2 topics in real-time
-- 📋 **Topic Discovery**: List all available ROS2 topics with one click
-- 🔌 **WebSocket Integration**: Uses rosbridge for seamless ROS2-web communication
-- 🧪 **Comprehensive Testing**: 39 tests with excellent coverage (89.65% for main components)
-- 🐳 **Docker Environment**: Fully containerized development and deployment
-- ⚡ **Hot Reload**: Development server with instant updates
+- **Web-based ROS2 Dashboard**: React interface for ROS2 interaction
+- **Real-time Topic Monitoring**: Subscribe to and visualize ROS2 topics in real-time
+- **Topic Discovery**: List all available ROS2 topics with one click
+- **WebSocket Integration**: Uses rosbridge for seamless ROS2-web communication
+- **Comprehensive Testing**: 39 tests with excellent coverage (89.65% for main components)
+- **Docker Environment**: Fully containerized development and deployment
+- **Hot Reload**: Development server with instant updates
 
 ## Quick Start
 
@@ -20,7 +20,7 @@ A modern web dashboard for ROS2 built with React and Docker. This project provid
 
 ### 1. Clone and Setup
 ```bash
-git clone <repository-url>
+git clone https://github.com/aldajo92/ROS2_Docker_React.git
 cd Docker_ROS2_Humble_React
 ```
 
@@ -148,22 +148,3 @@ The project includes a comprehensive test suite with 39 tests:
 MIT
 
 **Author**: [Alejandro Daniel Jose Gomez Florez](https://www.linkedin.com/in/aldajo92/)
-
----
-
-## Troubleshooting
-
-### Container Issues
-- Ensure Docker is running
-- Check container status: `docker ps`
-- Restart container: `./scripts/run.sh`
-
-### React App Issues
-- Check if rosbridge is running
-- Verify WebSocket connection at `ws://localhost:9090`
-- Check browser console for errors
-
-### ROS2 Issues
-- Ensure ROS2 nodes are running
-- Check topic availability: `ros2 topic list`
-- Verify rosbridge_suite is installed
