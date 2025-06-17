@@ -4,6 +4,7 @@ import useROS from '../hooks/useROS';
 import ConnectionStatus from './ConnectionStatus';
 import AvailableTopics from './AvailableTopics';
 import EmptyCard from './EmptyCard';
+import './ROS2Dashboard.css';
 
 const ROS2Dashboard = () => {
     const { ros, connected, error } = useROS('ws://localhost:9090');
@@ -21,29 +22,12 @@ const ROS2Dashboard = () => {
     };
 
     return (
-        <div style={{
-            padding: '20px',
-            fontFamily: 'Arial, sans-serif',
-            height: '100vh',
-            display: 'flex',
-            flexDirection: 'column'
-        }}>
-            <h1 style={{ marginBottom: '20px' }}>ROS2 Web Dashboard</h1>
+        <div className="dashboard-container">
+            <h1 className="dashboard-header">ROS2 Web Dashboard</h1>
 
-            <div style={{
-                display: 'flex',
-                gap: '20px',
-                flex: 1,
-                height: 'calc(100vh - 100px)' // Adjust based on header height
-            }}>
+            <div className="dashboard-content">
                 {/* Left Panel */}
-                <div style={{
-                    minWidth: '400px',
-                    maxWidth: '500px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0'
-                }}>
+                <div className="left-panel">
                     {/* Connection Status */}
                     <ConnectionStatus
                         connected={connected}
@@ -59,10 +43,7 @@ const ROS2Dashboard = () => {
                 </div>
 
                 {/* Right Panel */}
-                <div style={{
-                    flex: 1,
-                    display: 'flex'
-                }}>
+                <div className="right-panel">
                     <EmptyCard />
                 </div>
             </div>

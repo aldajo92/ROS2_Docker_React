@@ -1,0 +1,32 @@
+.dashboard-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-header {
+    margin-bottom: 20px;
+}
+
+.dashboard-content {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    height: calc(100vh - 100px);
+    /* Adjust based on header height */
+}
+
+.left-panel {
+    min-width: 400px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+}

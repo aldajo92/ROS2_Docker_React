@@ -1,0 +1,26 @@
+.empty-card {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+}
+
+.empty-card-content {
+    text-align: center;
+    color: #6c757d;
+}
+
+.empty-card-title {
+    margin-bottom: 10px;
+}
+
+.empty-card-description {
+    font-size: 14px;
+    font-style: italic;
+}
